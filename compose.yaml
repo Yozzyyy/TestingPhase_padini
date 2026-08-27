@@ -1,0 +1,68 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_URL=${DB_URL}
+      - WATCHFILES_FORCE_POLLING=true
+      - WATCHFILES_POLL_DELAY_MS=300
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      database:
+        condition: service_healthy
+    networks:
+      - full-stack-network
+    volumes:
+      - ./backend:/app
+      - /app/.virtualENV
+      - /app/rasa
+      - /app/__pycache__
+      
+  frontend:
+    build:
+      context: ./frontend/Padini-HR-Chatbot-Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend
+    networks:
+      - full-stack-network
+    volumes:
+      - ./frontend/Padini-HR-Chatbot-Frontend:/app
+      - /app/node_modules
+
+
+  database:
+    image: mariadb:12.3.2-ubi10
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+    networks:
+      - full-stack-network
+
+volumes:
+  mariadb_data:
+
+networks:
+  full-stack-network:
+    driver: bridge

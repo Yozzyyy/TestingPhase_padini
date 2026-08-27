@@ -1,0 +1,110 @@
+version: "3.1"
+ 
+intents:
+  # Default intents
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+ 
+  # Probation Period intents
+  - ask_probation_duration
+  - ask_job_grade
+  - ask_department
+  - ask_probation_extension_possible
+  - ask_probation_extension_duration
+  - ask_leave_during_probation
+  - ask_notice_period_during_probation
+  - ask_termination_during_probation
+ 
+  # Extend Probation intents
+  - ask_extend_probation_process
+  - ask_handle_underperforming_staff
+  - ask_implement_cap_pip
+  - ask_extend_probation_months
+  - ask_not_confirmed_after_extension
+  - ask_early_confirmation_eligibility
+  - ask_confirmation_letter
+  - ask_notice_period_after_confirmation
+  - ask_full_benefits_after_confirmation
+ 
+responses:
+  # Default responses
+  utter_greet:
+  - text: "Hey! How are you?"
+ 
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+ 
+  utter_did_that_help:
+  - text: "Did that help you?"
+ 
+  utter_happy:
+  - text: "Great, carry on!"
+ 
+  utter_goodbye:
+  - text: "Bye"
+ 
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+ 
+  # Probation Period responses
+  utter_ask_probation_duration:
+  - text: "The probation period may vary depending on the job position and/or department. Please refer to the Probation / Notice Period tab for more details."
+ 
+  utter_ask_job_grade:
+  - text: "The job grade may vary depending on the job title. Please refer to the Job Grade Listing tab for more details."
+ 
+  utter_ask_department:
+  - text: "Department assignments may vary for each employee. Please refer to the Department Listing tab for more details."
+ 
+  utter_ask_probation_extension_possible:
+  - text: "Yes, the probation period can be extended if the employee's performance during the initial probation period is below expectations or does not meet the required standards."
+ 
+  utter_ask_probation_extension_duration:
+  - text: "The probation period can be extended for a maximum of up to 6 months. The total probation period, including any extension, is capped at six months."
+ 
+  utter_ask_leave_during_probation:
+  - text: "Yes, employees are allowed to take leave during the probation period. Kindly apply through BOSS i-NET."
+ 
+  utter_ask_notice_period_during_probation:
+  - text: "The notice period during probation may vary depending on the job position and/or department. Please refer to the Probation / Notice Period tab for more details."
+ 
+  utter_ask_termination_during_probation:
+  - text: "Yes, the company may terminate employment during the probation period if the employee's performance or conduct is found to be unsatisfactory throughout the probation period."
+ 
+  # Extend Probation responses
+  utter_ask_extend_probation_process:
+  - text: "Please refer to the flowchart for the full process flow on extending a probation period."
+ 
+  utter_ask_handle_underperforming_staff:
+  - text: "The HOD and Marketing team should provide coaching and continuous feedback to the underperforming employee, and consider implementing a Corrective Action Plan (CAP) or extending the probation period if necessary."
+ 
+  utter_ask_implement_cap_pip:
+  - text: "Please refer to the flowchart for the full steps on implementing a Corrective Action Plan (CAP) or Performance Improvement Plan (PIP)."
+ 
+  utter_ask_extend_probation_months:
+  - text: "The standard probation extension is 6 months. However, HODs have the discretion to shorten the extension period if necessary."
+ 
+  utter_ask_not_confirmed_after_extension:
+  - text: "If the employee is still not confirmed after the 6-month probation extension, HR will issue a termination letter to the employee within 2 weeks prior to the completion of the 6-month probation extension period."
+ 
+  utter_ask_early_confirmation_eligibility:
+  - text: "Yes, an employee may be eligible for early confirmation if their performance is outstanding or exceeds expectations, subject to HOD and HR approval."
+ 
+  utter_ask_confirmation_letter:
+  - text: "Yes, HR will issue a formal confirmation letter to the employee upon successful completion of the probation period."
+ 
+  utter_ask_notice_period_after_confirmation:
+  - text: "The notice period after confirmation may vary depending on the job position and/or department. Please refer to the Probation / Notice Period tab for more details."
+ 
+  utter_ask_full_benefits_after_confirmation:
+  - text: "Please refer to the company policy for details on full employee benefits after confirmation."
+ 
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

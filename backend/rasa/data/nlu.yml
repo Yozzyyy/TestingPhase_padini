@@ -1,0 +1,310 @@
+version: "3.1"
+ 
+nlu:
+ 
+# ─── Default Intents ───────────────────────────────────────────────
+ 
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hi there
+    - good morning
+    - good afternoon
+    - hey there
+    - helo
+    - hii
+    - morning
+ 
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you
+    - see ya
+    - talk to you later
+    - ok bye
+    - bye bye
+    - tq bye
+ 
+- intent: affirm
+  examples: |
+    - yes
+    - yep
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ya
+    - yup
+    - ok
+ 
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - nope
+    - not really
+    - nah
+ 
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I'm good
+    - doing well
+ 
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm unhappy
+    - not good
+ 
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+ 
+# ─── Probation Period ───────────────────────────────────────────────
+ 
+- intent: ask_probation_duration
+  examples: |
+    - How long is my probation period?
+    - how long is my probation peroid?
+    - how long is probation priod
+    - whats my probation period
+    - how long probation ah?
+    - what is the duration of probation
+    - probation period how long
+    - how many months is probation
+    - what is probation period length
+    - how long do i need to be on probation
+ 
+- intent: ask_job_grade
+  examples: |
+    - What is my job grade?
+    - wat is my job grade
+    - whats my job grad?
+    - my job grade how?
+    - what is your job grade
+    - can you tell me my job grade
+    - job grade how to check
+    - where to see my job grade
+    - what grade is my job
+ 
+- intent: ask_department
+  examples: |
+    - Which department am I assigned to?
+    - which deparment am i in
+    - wat department i belong to
+    - my department which one ah
+    - what is your department
+    - what department am I in
+    - which dept am i under
+    - how do i know my department
+    - my deparment is which one
+ 
+- intent: ask_probation_extension_possible
+  examples: |
+    - Can the probation period be extended?
+    - can probation be extend?
+    - can they extend my probation or not
+    - is it posible to extend probation
+    - Is it possible to extend the probation period?
+    - Can we extend the employee's probation period?
+    - May I know if the probation period can be extended?
+    - can probation period be extended or not
+    - is probation extensible
+    - can my probation be made longer
+    - probation can extend one or not
+ 
+- intent: ask_probation_extension_duration
+  examples: |
+    - How long can the probation period be extended?
+    - how long can probation be extened
+    - probation extension how long can
+    - maximum probation extension how long
+    - What is the duration of the extended probation period?
+    - How long can the probation period be extended for?
+    - What is the maximum extension allowed for the probation period?
+    - how many months can probation be extended
+    - max extension for probation how long
+    - probation extension maximum duration
+ 
+- intent: ask_leave_during_probation
+  examples: |
+    - Can I take leave during my probation period?
+    - can i take leve during probation
+    - can take anual leave during probation or not
+    - am i allow to take leave during probation
+    - Is an employee allowed to take leave during probation?
+    - Can employees apply for leave while on probation?
+    - Are employees entitled to leave during their probation period?
+    - during probation can apply leave or not
+    - probation staff can take leave
+    - can staff on probation take annual leave
+ 
+- intent: ask_notice_period_during_probation
+  examples: |
+    - What is the notice period during probation?
+    - wat is notice period during probation
+    - notice period during probation how long
+    - how many days notice period probation
+    - What is the notice period for employees under probation?
+    - How much notice is required during the probation period?
+    - What notice period applies while an employee is on probation?
+    - notice period for probation staff
+    - during probation notice period is how long
+    - probation notice period how many days
+ 
+- intent: ask_termination_during_probation
+  examples: |
+    - Can the company terminate employment during probation?
+    - can company terminate during probation
+    - can kena terminate during probation ah
+    - is termination allowed during probation
+    - Is the company allowed to terminate an employee during probation?
+    - Can employment be terminated while the employee is on probation?
+    - Does the company have the right to terminate employment during the probation period?
+    - what reason company can terminate during probation
+    - grounds for termination durring probation
+    - under what condition can terminate probation staff
+    - can they fire me during probation
+ 
+# ─── Extend Probation ───────────────────────────────────────────────
+ 
+- intent: ask_extend_probation_process
+  examples: |
+    - What is the process flow for extending probation?
+    - what is the proccess for extending probation
+    - steps to extend probation period
+    - probation extension process flow how
+    - What is the process for extending an employee's probation period?
+    - Can you share the process flow for a probation extension?
+    - What are the steps involved in extending the probation period?
+    - how to extend probation step by step
+    - what is the flow for probation extension
+    - probation extend process how
+ 
+- intent: ask_handle_underperforming_staff
+  examples: |
+    - How should I handle an underperforming staff member?
+    - how to handel underperforming staff
+    - what to do if staff underperform
+    - my staff performance not good what to do
+    - How do the HOD and Marketing team handle underperforming staff?
+    - How should the HOD and Marketing team manage underperforming employees?
+    - What is the process for handling underperforming staff within the HOD/Marketing department?
+    - staff not performing well how to handle
+    - what action to take for underperforming employee
+    - employee performance issue what to do
+ 
+- intent: ask_implement_cap_pip
+  examples: |
+    - How do we implement a Corrective Action Plan?
+    - what is CAP plan
+    - how to implement corrective action plan
+    - how to do CAP for staff
+    - How do we implement a CAP or PIP?
+    - What is the process for implementing a CAP/PIP?
+    - How should a Corrective Action Plan or Performance Improvement Plan be carried out?
+    - Can you share the steps for conducting a CAP/PIP for underperforming employees?
+    - what is the diferent between CAP and PIP
+    - CAP vs PIP same thing or different
+    - is CAP and PIP same
+    - how to start a pip for employee
+ 
+- intent: ask_extend_probation_months
+  examples: |
+    - Can we extend the probation by a set number of months?
+    - can HOD shorten the probation extention
+    - can hod reduce extension period
+    - hod can cut short probation extension or not
+    - Can we extend the probation period by a certain number of months?
+    - Is it possible to extend the probation period for a fixed number of months?
+    - Can the probation period be extended for a specified duration?
+    - standard probation extention duration
+    - normal probation extension period how long
+    - how many month is probation extension
+ 
+- intent: ask_not_confirmed_after_extension
+  examples: |
+    - What happens if the employee is not confirmed after 6-month extension?
+    - what happen if still not confirm after 6 month
+    - if employee not confirmed after extension what to do
+    - still not confirm after extend probation then how
+    - What should be done if an employee is not confirmed after 6 months?
+    - How do we proceed if the employee remains unconfirmed after the extension ends?
+    - What is the next step if the employee is not confirmed within 6 months?
+    - employee still on probation after 6 months what happen
+    - not confirmed after probation extension what next
+    - after max extension still not confirm then how
+ 
+- intent: ask_early_confirmation_eligibility
+  examples: |
+    - Can an employee be confirmed early?
+    - can employee be confirm early
+    - early confirmation posible or not
+    - can confirm staff before probation end
+    - Is the employee eligible for early confirmation?
+    - Can the employee be considered for early confirmation?
+    - Is the employee qualified for early confirmation of employment?
+    - what qualify for early confirmation
+    - early confirm need what requirement
+    - what is criteria for erly confirmation
+    - who can get early confirmation
+ 
+- intent: ask_confirmation_letter
+  examples: |
+    - Will the employee receive a confirmation letter?
+    - will employee get comfirmation letter
+    - confirmation leter will be given or not
+    - after confirm got letter one or not
+    - Will a confirmation letter be issued to the employee?
+    - Does the employee get a confirmation letter upon successful probation?
+    - Is a formal confirmation letter provided after probation?
+    - who issue the confimation letter
+    - confirmation letter send by who
+    - hr or hod give confirmation letter
+    - after probation pass will get letter
+ 
+- intent: ask_notice_period_after_confirmation
+  examples: |
+    - What is the notice period after confirmation?
+    - notice period after comfirm how long
+    - after confirmation what is notise period
+    - confirmed staff notice period how many days
+    - What is the notice period for confirmed employees?
+    - How much notice is required after employment confirmation?
+    - What is the notice period once an employee is confirmed?
+    - after confirm how many days notice
+    - confirmed employee notice period
+    - notice period once confirmed how long
+ 
+- intent: ask_full_benefits_after_confirmation
+  examples: |
+    - Will the employee get full benefits after confirmation?
+    - after confirm get full benifit or not
+    - confirmed employee entitle full benefit
+    - full benefits after probation confirm
+    - Will the employee become eligible for full benefits after confirmation?
+    - Is the employee entitled to full benefits upon confirmation?
+    - Will full employee benefits apply after confirmation?
+    - Does employment confirmation make the employee eligible for complete benefits?
+    - where to find compny policy on benefit
+    - company benifit policy where to refer
+    - where can see benefit policy
+    - what benefits do i get after confirmation
+ 

@@ -1,0 +1,110 @@
+version: "3.1"
+ 
+rules:
+ 
+# ─── Default Rules ───────────────────────────────────────────────
+ 
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+ 
+- rule: Say I am a bot anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+ 
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+ 
+# ─── Probation Period Rules ───────────────────────────────────────
+ 
+- rule: Answer probation duration
+  steps:
+  - intent: ask_probation_duration
+  - action: utter_ask_probation_duration
+ 
+- rule: Answer job grade
+  steps:
+  - intent: ask_job_grade
+  - action: utter_ask_job_grade
+ 
+- rule: Answer department
+  steps:
+  - intent: ask_department
+  - action: utter_ask_department
+ 
+- rule: Answer probation extension possible
+  steps:
+  - intent: ask_probation_extension_possible
+  - action: utter_ask_probation_extension_possible
+ 
+- rule: Answer probation extension duration
+  steps:
+  - intent: ask_probation_extension_duration
+  - action: utter_ask_probation_extension_duration
+ 
+- rule: Answer leave during probation
+  steps:
+  - intent: ask_leave_during_probation
+  - action: utter_ask_leave_during_probation
+ 
+- rule: Answer notice period during probation
+  steps:
+  - intent: ask_notice_period_during_probation
+  - action: utter_ask_notice_period_during_probation
+ 
+- rule: Answer termination during probation
+  steps:
+  - intent: ask_termination_during_probation
+  - action: utter_ask_termination_during_probation
+ 
+# ─── Extend Probation Rules ──────────────────────────────────────
+ 
+- rule: Answer extend probation process
+  steps:
+  - intent: ask_extend_probation_process
+  - action: utter_ask_extend_probation_process
+ 
+- rule: Answer handle underperforming staff
+  steps:
+  - intent: ask_handle_underperforming_staff
+  - action: utter_ask_handle_underperforming_staff
+ 
+- rule: Answer implement CAP PIP
+  steps:
+  - intent: ask_implement_cap_pip
+  - action: utter_ask_implement_cap_pip
+ 
+- rule: Answer extend probation months
+  steps:
+  - intent: ask_extend_probation_months
+  - action: utter_ask_extend_probation_months
+ 
+- rule: Answer not confirmed after extension
+  steps:
+  - intent: ask_not_confirmed_after_extension
+  - action: utter_ask_not_confirmed_after_extension
+ 
+- rule: Answer early confirmation eligibility
+  steps:
+  - intent: ask_early_confirmation_eligibility
+  - action: utter_ask_early_confirmation_eligibility
+ 
+- rule: Answer confirmation letter
+  steps:
+  - intent: ask_confirmation_letter
+  - action: utter_ask_confirmation_letter
+ 
+- rule: Answer notice period after confirmation
+  steps:
+  - intent: ask_notice_period_after_confirmation
+  - action: utter_ask_notice_period_after_confirmation
+ 
+- rule: Answer full benefits after confirmation
+  steps:
+  - intent: ask_full_benefits_after_confirmation
+  - action: utter_ask_full_benefits_after_confirmation
+ 

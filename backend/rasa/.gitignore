@@ -1,0 +1,4 @@
+.rasa
+models/*
+.python-version
+!models/.gitkeep
